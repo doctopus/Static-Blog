@@ -1,0 +1,20 @@
+<!-- archive.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+    
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script/markdownRenderer.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMarkdown('markdownContainer', './post/post.md');
+    });
+  </script>
+</head>
+<body>
+  <div id="markdownContainer"></div>
+</body>
+</html>

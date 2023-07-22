@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  
+  <title>Blog Page</title>
+  <meta name="description" content="Our first page">
+  <meta name="keywords" content="html tutorial template">
+</head>
+<body>
+  <div id="blog-posts">
+    hello
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // Fetch your Markdown file
+    fetch('./post/post.md')
+      .then(response => response.text())
+      .then(markdown => {
+        // Convert Markdown to HTML
+        const html = marked(markdown);
+
+        // Log the converted HTML
+        console.log(html);
+
+        // Insert the HTML into the container
+        document.getElementById('blog-posts').innerHTML = html;
+      })
+      .catch(error => console.error(error));
+  </script>
+</body>
+</html>
